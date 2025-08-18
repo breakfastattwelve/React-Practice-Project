@@ -19,7 +19,6 @@ body {
   margin: 3rem auto;
 }
 
-
 #header img {
   width: 5rem;
   height: 5rem;
@@ -64,18 +63,89 @@ body {
   font-size: 1rem;
 }
 
+/* Summary Section Styles */
+.summary-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 60rem;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, #307e6c, #2b996d);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 150px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid #76c0ae;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.summary-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.8rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  color: #83e6c0;
+  font-weight: bold;
+}
+
+.summary-value {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #c2e9e0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Results Section Styles */
 #result {
-  max-width: 50rem;
+  max-width: 70rem;
   margin: 2rem auto;
   padding: 1rem;
-  table-layout: fixed;
-  border-spacing: 1rem;
-  text-align: right;
+}
+
+.results-title {
+  text-align: center;
+  color: #83e6c0;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#result table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(135deg, #307e6c, #2b996d);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid #76c0ae;
 }
 
 #result thead {
+  background: linear-gradient(135deg, #1a4a3a, #1a5a3a);
+}
+
+#result thead th {
+  padding: 1rem 0.5rem;
   font-size: 0.7rem;
   color: #83e6c0;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #76c0ae;
 }
 
 #result tbody {
@@ -84,6 +154,75 @@ body {
   color: #c2e9e0;
 }
 
+#result tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+#result tbody tr:nth-child(even) {
+  background: rgba(118, 192, 174, 0.1);
+}
+
+#result tbody tr:hover {
+  background: rgba(118, 192, 174, 0.2);
+}
+
+#result tbody td {
+  padding: 0.8rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(118, 192, 174, 0.3);
+}
+
+/* Specific column styling */
+.year-cell {
+  font-weight: bold;
+  color: #83e6c0;
+}
+
+.value-cell {
+  font-weight: 700;
+  color: #c2e9e0;
+}
+
+.interest-cell {
+  color: #76c0ae;
+}
+
+.total-interest-cell {
+  color: #83e6c0;
+  font-weight: 600;
+}
+
+.capital-cell {
+  color: #c2e9e0;
+}
+
 .center {
   text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .summary-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .summary-card {
+    min-width: 200px;
+  }
+  
+  #result {
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+  
+  #result table {
+    font-size: 0.7rem;
+  }
+  
+  #result thead th,
+  #result tbody td {
+    padding: 0.5rem 0.25rem;
+  }
 }
